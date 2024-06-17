@@ -1,0 +1,169 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Sistema de Gestão de Eventos",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/auth/register": {
+            "post": {
+                "summary": "Registrar usuário",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": { "type": "string" },
+                                    "password": { "type": "string" },
+                                    "role": { "type": "string" }
+                                },
+                                "required": ["username", "password"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": { "description": "Usuário registrado" }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "summary": "Login do usuário",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": { "type": "string" },
+                                    "password": { "type": "string" }
+                                },
+                                "required": ["username", "password"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Login bem-sucedido" }
+                }
+            }
+        },
+        "/events": {
+            "get": {
+                "summary": "Obter todos os eventos",
+                "responses": {
+                    "200": { "description": "Eventos obtidos" }
+                }
+            },
+            "post": {
+                "summary": "Criar um evento",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "description": { "type": "string" },
+                                    "date": { "type": "string", "format": "date-time" },
+                                    "location": { "type": "string" },
+                                    "organizer": { "type": "string" }
+                                },
+                                "required": ["title", "description", "date", "location", "organizer"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": { "description": "Evento criado" }
+                }
+            }
+        },
+        "/events/{id}": {
+            "put": {
+                "summary": "Atualizar um evento",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": { "type": "string" }
+                }],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "description": { "type": "string" },
+                                    "date": { "type": "string", "format": "date-time" },
+                                    "location": { "type": "string" },
+                                    "organizer": { "type": "string" }
+                                },
+                                "required": ["title", "description", "date", "location", "organizer"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Evento atualizado" }
+                }
+            },
+            "delete": {
+                "summary": "Excluir um evento",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": { "type": "string" }
+                }],
+                "responses": {
+                    "200": { "description": "Evento excluído" }
+                }
+            }
+        },
+        "/participants": {
+            "post": {
+                "summary": "Adicionar um participante",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "eventId": { "type": "string" },
+                                    "userId": { "type": "string" }
+                                },
+                                "required": ["eventId", "userId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": { "description": "Participante adicionado" }
+                }
+            }
+        },
+        "/participants/{eventId}": {
+            "get": {
+                "summary": "Obter participantes por evento",
+                "parameters": [{
+                    "name": "eventId",
+                    "in": "path",
+                    "required": true,
+                    "schema": { "type": "string" }
+                }],
+                "responses": {
+                    "200": { "description": "Participantes obtidos" }
+                }
+            }
+        }
+    }
+}
