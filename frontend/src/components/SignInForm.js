@@ -12,8 +12,8 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
             localStorage.setItem('authToken', response.data.token);
             onAuthenticate(true);
         } catch (err) {
-            console.error('Login error:', err);
-            alert('Failed to login');
+            console.error('Erro no login:', err);
+            alert('Falha ao fazer login');
         }
     };
 
@@ -27,11 +27,11 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         Typography variant = "h4"
         component = "h1"
         gutterBottom >
-        Sign In <
+        Entrar <
         /Typography> <
         form onSubmit = { handleLogin } >
         <
-        TextField label = "Username"
+        TextField label = "Usuário"
         value = { user }
         onChange = {
             (e) => setUser(e.target.value)
@@ -40,7 +40,7 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         required /
         >
         <
-        TextField label = "Password"
+        TextField label = "Senha"
         type = "password"
         value = { pass }
         onChange = {
@@ -54,7 +54,7 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         variant = "contained"
         color = "primary"
         fullWidth >
-        Sign In <
+        Entrar <
         /Button> <
         Box mt = { 2 } >
         <
@@ -63,7 +63,7 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         onClick = {
             () => showRegisterForm(true)
         } >
-        No account ? Register now <
+        Não tem conta ? Registre - se agora <
         /Link> < /
         Box > <
         /form> < /

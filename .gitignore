@@ -1,0 +1,23 @@
+# Arquivos de ambiente
+/backend/.env
+
+# Módulos do Node.js
+/node_modules
+
+# Arquivos de build e cache
+/.DS_Store
+/.vscode
+/coverage
+/build
+/dist
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração específicos do usuário
+/.idea
+/.vscode
+
+# Arquivos de backup
+*.bak
+*.backup

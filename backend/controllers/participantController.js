@@ -1,6 +1,6 @@
 const ParticipantModel = require('../models/Participant');
 
-exports.addParticipantEntry = async(req, res) => {
+exports.addParticipant = async(req, res) => {
     const { eventId, userId } = req.body;
     try {
         const participant = new ParticipantModel({ eventId, userId });
@@ -11,7 +11,7 @@ exports.addParticipantEntry = async(req, res) => {
     }
 };
 
-exports.fetchParticipants = async(req, res) => {
+exports.getParticipants = async(req, res) => {
     const { eventId } = req.params;
     try {
         const participants = await ParticipantModel.find({ eventId }).populate('userId', 'username');

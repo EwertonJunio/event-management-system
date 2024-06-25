@@ -2,7 +2,7 @@ const jsonWebToken = require('jsonwebtoken');
 const bcryptHash = require('bcrypt');
 const UserModel = require('../models/User');
 
-exports.createUser = async(req, res) => {
+exports.register = async(req, res) => {
     const { username, password, role } = req.body;
     try {
         const hashedPassword = await bcryptHash.hash(password, 10);
@@ -14,7 +14,7 @@ exports.createUser = async(req, res) => {
     }
 };
 
-exports.userLogin = async(req, res) => {
+exports.login = async(req, res) => {
     const { username, password } = req.body;
     try {
         const user = await UserModel.findOne({ username });

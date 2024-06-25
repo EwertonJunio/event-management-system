@@ -10,7 +10,7 @@ const ParticipantList = ({ eventId }) => {
                 const response = await api.get(`/participants/${eventId}`);
                 setParticipants(response.data);
             } catch (error) {
-                console.error('Failed to fetch participants:', error);
+                console.error('Falha ao buscar participantes:', error);
             }
         };
         fetchData();
@@ -19,7 +19,7 @@ const ParticipantList = ({ eventId }) => {
     return ( <
         div >
         <
-        h2 > Participants < /h2> <
+        h2 > Participantes < /h2> <
         ul > {
             participants.map(participant => ( <
                 li key = { participant._id } > { participant.userId.username } < /li>

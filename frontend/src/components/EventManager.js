@@ -41,8 +41,8 @@ const EventManager = ({ currentEvent, onSave }) => {
             }
             onSave();
         } catch (error) {
-            console.error('Error saving event:', error);
-            alert('Error saving event');
+            console.error('Erro ao salvar evento:', error);
+            alert('Erro ao salvar evento');
         }
     };
 
@@ -50,7 +50,7 @@ const EventManager = ({ currentEvent, onSave }) => {
         Box component = "form"
         onSubmit = { handleSubmit } >
         <
-        TextField label = "Title"
+        TextField label = "Título"
         name = "title"
         value = { formState.title }
         onChange = { handleChange }
@@ -58,7 +58,7 @@ const EventManager = ({ currentEvent, onSave }) => {
         required /
         >
         <
-        TextField label = "Description"
+        TextField label = "Descrição"
         name = "description"
         value = { formState.description }
         onChange = { handleChange }
@@ -74,7 +74,7 @@ const EventManager = ({ currentEvent, onSave }) => {
         required /
         >
         <
-        TextField label = "Location"
+        TextField label = "Localização"
         name = "location"
         value = { formState.location }
         onChange = { handleChange }
@@ -82,7 +82,7 @@ const EventManager = ({ currentEvent, onSave }) => {
         required /
         >
         <
-        TextField label = "Organizer"
+        TextField label = "Organizador"
         name = "organizer"
         value = { formState.organizer }
         onChange = { handleChange }
@@ -93,7 +93,7 @@ const EventManager = ({ currentEvent, onSave }) => {
         Button type = "submit"
         variant = "contained"
         color = "primary"
-        fullWidth > { currentEvent ? 'Update Event' : 'Create Event' } <
+        fullWidth > { currentEvent ? 'Atualizar Evento' : 'Criar Evento' } <
         /Button> <
         /Box>
     );

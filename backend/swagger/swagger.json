@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Sistema de Gestão de Eventos",
+        "title": "Ferramenta de Coodenação de Eventos",
         "version": "1.0.0"
     },
     "paths": {

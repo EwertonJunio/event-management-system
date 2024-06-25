@@ -12,8 +12,8 @@ const EventsOverview = () => {
             const response = await api.get('/events');
             setEventsData(response.data);
         } catch (error) {
-            console.error('Failed to fetch events:', error);
-            alert('Error fetching events');
+            console.error('Falha ao buscar eventos:', error);
+            alert('Erro ao buscar eventos');
         }
     }, []);
 
@@ -35,8 +35,8 @@ const EventsOverview = () => {
             await api.delete(`/events/${id}`);
             setEventsData(eventsData.filter(event => event._id !== id));
         } catch (error) {
-            console.error('Failed to delete event:', error);
-            alert('Error deleting event');
+            console.error('Falha ao deletar evento:', error);
+            alert('Erro ao deletar evento');
         }
     };
 
@@ -46,7 +46,7 @@ const EventsOverview = () => {
         Typography variant = "h4"
         component = "h1"
         gutterBottom >
-        Events Overview <
+        Visão Geral dos Eventos <
         /Typography> <
         List > {
             eventsData.map(event => ( <
@@ -58,16 +58,18 @@ const EventsOverview = () => {
                 Button variant = "contained"
                 color = "primary"
                 onClick = {
-                    () => handleEventEdit(event) } >
-                Edit <
+                    () => handleEventEdit(event)
+                } >
+                Editar <
                 /Button> <
                 Button variant = "contained"
                 color = "secondary"
                 onClick = {
-                    () => handleEventDelete(event._id) } >
-                Delete <
-                /Button> <
-                /ListItem>
+                    () => handleEventDelete(event._id)
+                } >
+                Deletar <
+                /Button> < /
+                ListItem >
             ))
         } <
         /List> <
@@ -75,8 +77,8 @@ const EventsOverview = () => {
         <
         EventManager currentEvent = { currentEvent }
         onSave = { handleEventSave }
-        /> <
-        /Box> <
+        /> < /
+        Box > <
         /Container>
     );
 };

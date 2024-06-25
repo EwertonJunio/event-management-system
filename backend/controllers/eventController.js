@@ -1,6 +1,6 @@
 const EventModel = require('../models/Event');
 
-exports.createEventEntry = async(req, res) => {
+exports.createEvent = async(req, res) => {
     const { title, description, date, location, organizer } = req.body;
     try {
         const newEvent = new EventModel({ title, description, date, location, organizer });
@@ -11,7 +11,7 @@ exports.createEventEntry = async(req, res) => {
     }
 };
 
-exports.fetchEvents = async(req, res) => {
+exports.getEvents = async(req, res) => {
     try {
         const events = await EventModel.find();
         res.status(200).json(events);
@@ -20,7 +20,7 @@ exports.fetchEvents = async(req, res) => {
     }
 };
 
-exports.updateEventEntry = async(req, res) => {
+exports.updateEvent = async(req, res) => {
     const { id } = req.params;
     const { title, description, date, location, organizer } = req.body;
     try {
@@ -31,7 +31,7 @@ exports.updateEventEntry = async(req, res) => {
     }
 };
 
-exports.removeEventEntry = async(req, res) => {
+exports.deleteEvent = async(req, res) => {
     const { id } = req.params;
     try {
         await EventModel.findByIdAndDelete(id);
