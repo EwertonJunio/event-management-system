@@ -2,6 +2,8 @@
 
 Este projeto é uma solução completa para gerenciamento de eventos, construída com tecnologias como Node.js, Express, e React. Ele oferece autenticação de usuários, operações CRUD para eventos, gerenciamento de participantes, e uma interface administrativa intuitiva.
 
+![Ferramenta_eventos](imagens/ferramenta_eventos.png)
+
 ## Recursos Principais
 
 - **Autenticação e Autorização de Usuários:**

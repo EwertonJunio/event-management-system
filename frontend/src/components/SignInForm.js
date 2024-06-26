@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Typography, Box, Link } from '@mui/material';
+import api from '../api';
 
-const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
+const SignInForm = ({ setAuth, showRegisterForm }) => {
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
 
@@ -10,7 +11,7 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         try {
             const response = await api.post('/auth/login', { username: user, password: pass });
             localStorage.setItem('authToken', response.data.token);
-            onAuthenticate(true);
+            setAuth(true);
         } catch (err) {
             console.error('Erro no login:', err);
             alert('Falha ao fazer login');
@@ -34,21 +35,17 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         TextField label = "Usuário"
         value = { user }
         onChange = {
-            (e) => setUser(e.target.value)
-        }
+            (e) => setUser(e.target.value) }
         fullWidth margin = "normal"
-        required /
-        >
+        required / >
         <
         TextField label = "Senha"
         type = "password"
         value = { pass }
         onChange = {
-            (e) => setPass(e.target.value)
-        }
+            (e) => setPass(e.target.value) }
         fullWidth margin = "normal"
-        required /
-        >
+        required / >
         <
         Button type = "submit"
         variant = "contained"
@@ -61,15 +58,14 @@ const AuthForm = ({ onAuthenticate, showRegisterForm }) => {
         Link component = "button"
         variant = "body2"
         onClick = {
-            () => showRegisterForm(true)
-        } >
-        Não tem conta ? Registre - se agora <
-        /Link> < /
-        Box > <
-        /form> < /
-        Box > <
+            () => showRegisterForm(true) } >
+        Registre - se agora <
+        /Link> <
+        /Box> <
+        /form> <
+        /Box> <
         /Container>
     );
 };
 
-export default AuthForm;
+export default SignInForm;

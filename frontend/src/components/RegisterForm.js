@@ -37,8 +37,7 @@ const RegisterForm = ({ setAuth }) => {
         onChange = {
             (e) => setUsername(e.target.value) }
         fullWidth margin = "normal"
-        required /
-        >
+        required / >
         <
         TextField label = "Senha"
         type = "password"
@@ -46,8 +45,7 @@ const RegisterForm = ({ setAuth }) => {
         onChange = {
             (e) => setPassword(e.target.value) }
         fullWidth margin = "normal"
-        required /
-        >
+        required / >
         <
         TextField label = "Função"
         select value = { role }
