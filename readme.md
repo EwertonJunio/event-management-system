@@ -1,6 +1,6 @@
 # Ferramenta de Coordenação de Eventos
 
-Este projeto é uma solução completa para gerenciamento de eventos, construída com tecnologias como Node.js, Express, e React. Ele oferece autenticação de usuários, operações CRUD para eventos, gerenciamento de participantes, e uma interface administrativa intuitiva.
+ Este projeto é uma solução completa para gerenciamento de eventos, construída com tecnologias como Node.js, Express, e React. Ele oferece autenticação de usuários, operações CRUD para eventos, gerenciamento de participantes, e uma interface administrativa intuitiva.
 
 ![ferramenta_eventos](image.png)
 
@@ -44,7 +44,7 @@ Este projeto é uma solução completa para gerenciamento de eventos, construíd
 
 ## Configuração e Uso
 
-Consulte o arquivo README.md em cada diretório específico (backend e frontend) para instruções detalhadas sobre configuração e uso.
+ Consulte o arquivo README.md em cada diretório específico (backend e frontend) para instruções detalhadas sobre configuração e uso.
 
 ## Documentação da API
 
@@ -75,11 +75,11 @@ Consulte o arquivo README.md em cada diretório específico (backend e frontend)
    http://localhost:3000
    ```
 
-## Uso
-  
-  ![gerenciamento de eventos](image-3.png)
+ ## Uso
 
-### Login e Registro
+ ![gerenciamento de eventos](image-3.png)
+
+ ### Login e Registro
 
 1. **Registro:**
    Visite a rota de registro para criar um novo usuário. Existem permissões diferenciadas para usuários comuns e administradores. Para criar um administrador, defina o campo role como admin durante o registro do usuário.
@@ -113,3 +113,8 @@ Consulte o arquivo README.md em cada diretório específico (backend e frontend)
 ## Estilização
 
  A estilização dos componentes React é feita através do uso de CSS no projeto. A interface foi cuidadosamente projetada para ser responsiva e proporcionar uma experiência de uso intuitiva em dispositivos de diferentes tamanhos.
+
+ ## Vídeo no YouTube
+
+[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/p-pZCnI83ac/0.jpg)](https://youtu.be/p-pZCnI83ac)
+
