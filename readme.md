@@ -114,7 +114,6 @@
 
  A estilização dos componentes React é feita através do uso de CSS no projeto. A interface foi cuidadosamente projetada para ser responsiva e proporcionar uma experiência de uso intuitiva em dispositivos de diferentes tamanhos.
 
- ## Vídeo no YouTube
 
-[![Assista ao vídeo no YouTube](https://img.youtube.com/vi/p-pZCnI83ac/0.jpg)](https://youtu.be/p-pZCnI83ac)
+
 
