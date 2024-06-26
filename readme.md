@@ -76,14 +76,20 @@ Consulte o arquivo README.md em cada diretório específico (backend e frontend)
    ```
 
 ## Uso
+  
+  ![gerenciamento de eventos](image-3.png)
 
 ### Login e Registro
 
 1. **Registro:**
    Visite a rota de registro para criar um novo usuário. Existem permissões diferenciadas para usuários comuns e administradores. Para criar um administrador, defina o campo role como admin durante o registro do usuário.
+   
+   ![registrar](image-1.png)
 
 2. **Login:**
    Utilize a rota de login para obter um token JWT com suas credenciais. Este token é necessário para acessar as rotas protegidas.
+
+   ![login](image-2.png)
 
 ### Gerenciamento de Eventos
 
